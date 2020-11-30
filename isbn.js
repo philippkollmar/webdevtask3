@@ -21,5 +21,3 @@ function checkISBN(digits) {
 module.exports = {
     checkISBN
 }
-
-///[\n-]+/

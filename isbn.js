@@ -1,6 +1,6 @@
 function checkISBN(digits) {
     let stringSplit = digits.split("-").join("");
-    let stringSliced = stringSplit.substring(0, 9); 
+    let stringSliced = stringSplit.substring(0, 9);
     let factor = 1;
     let sum = 0;
 
@@ -12,10 +12,14 @@ function checkISBN(digits) {
     }
     let checkdigit = sum % 11;
 
-    if(checkdigit === 10){
-        return "X"
+    if (checkdigit === 10) {
+        checkdigit = "X"
     }
-    return checkdigit.toString();
+    if (stringSplit[9] === checkdigit.toString()) {
+        return true;
+    }
+    return false;
+
 }
 
 module.exports = {

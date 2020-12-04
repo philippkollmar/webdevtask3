@@ -18,5 +18,5 @@ function check() {
 }
 clear();
 
-const button = document.querySelector('#check')
-button.addEventListener('click', check)
+const update = document.querySelector('#userinput')
+update.addEventListener('input', check)

@@ -1,3 +1,9 @@
-const {checkISBN} = require('./isbn')
+const { checkISBN } = require('./isbn')
 
-document.querySelector('#result').innerHTML = checkISBN("3-499-13599")
+function check() {
+    const userinput = document.querySelector('#userinput').value
+    document.querySelector('#result').innerHTML = checkISBN(userinput)
+}
+
+const button = document.querySelector('#check')
+button.addEventListener('click', check)

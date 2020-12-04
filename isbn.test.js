@@ -10,7 +10,7 @@ describe('checkISBN', () => {
         expect(checkISBN("123")).toBe("3");
     })
 
-    it('should return 39', () => {
+    it('should return 6', () => {
         expect(checkISBN("396")).toBe("6");
     })
 

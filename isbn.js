@@ -1,5 +1,4 @@
 function checkISBN(digits) {
-    //let stringTrim = digits.replace("-","").replace("-","");
     let stringSplit = digits.split("-").join(""); 
     let factor = 1;
     let sum = 0;

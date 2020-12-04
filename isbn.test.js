@@ -30,5 +30,9 @@ describe('checkISBN', () => {
         expect(checkISBN("3-499-13599")).toBe("X");
     })
 
+    it('3-499-13599 more numbers should return X as well', () => {
+        expect(checkISBN("3-499-135998455649656")).toBe("X");
+    })
+
     
 })

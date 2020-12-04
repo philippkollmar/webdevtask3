@@ -2,32 +2,32 @@ const {checkISBN} = require('./isbn');
 
 describe('checkISBN', () => {
 
-    it('should return 1', () => {
-        expect(checkISBN("1")).toBe("1");
+    it('1 should return false', () => {
+        expect(checkISBN("1")).toBe(false);
     })
 
-    it('should return 3', () => {
-        expect(checkISBN("123")).toBe("3");
-    })
-
-    it('should return 39', () => {
-        expect(checkISBN("396")).toBe("6");
+    it('123 should return false', () => {
+        expect(checkISBN("123")).toBe(false);
     })
 
     it('368008783 should return 7', () => {
-        expect(checkISBN("368008783")).toBe("7");
+        expect(checkISBN("3680087837")).toBe(true);
     })
 
     it('3-680-0878 should return 7', () => {
-        expect(checkISBN("3-680-08783")).toBe("7");
+        expect(checkISBN("3-680-08783-7")).toBe(true);
     })
 
     it('3---------------680-0878 should return 7', () => {
-        expect(checkISBN("3----------------680-08783")).toBe("7");
+        expect(checkISBN("3----------------680-08783")).toBe(false);
     })
 
-    it('3-499-13599 should return X', () => {
-        expect(checkISBN("3-499-13599")).toBe("X");
+    it('3-499-13599 should return false', () => {
+        expect(checkISBN("3-499-13599")).toBe(false);
+    })
+
+    it('3-499-13599-X', () => {
+        expect(checkISBN("3-499-13599-X")).toBe(true);
     })
 
     

@@ -1,9 +1,11 @@
 const { checkISBN } = require('./isbn')
-
-document.getElementById('isbnOK').style.visibility = 'hidden'
-document.getElementById('isbnCorrupt').style.visibility = 'hidden'
+function clear() {
+    document.getElementById('isbnOK').style.visibility = 'hidden'
+    document.getElementById('isbnCorrupt').style.visibility = 'hidden'
+}
 
 function check() {
+    clear();
     const userinput = document.querySelector('#userinput').value
 
     if (checkISBN(userinput) === true) {
@@ -12,8 +14,9 @@ function check() {
     else {
         document.getElementById('isbnCorrupt').style.visibility = 'visible'
     }
-    //document.querySelector('#result').innerHTML = checkISBN(userinput)
-}
 
-const button = document.querySelector('#check')
-button.addEventListener('click', check)
+}
+clear();
+
+const update = document.querySelector('#userinput')
+update.addEventListener('input', check)

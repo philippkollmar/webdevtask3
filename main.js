@@ -33,9 +33,8 @@ update2.addEventListener('input', check)
 update3.addEventListener('input', check)
 update4.addEventListener('input', check)
 
-
 var jumpInput = document.getElementsByClassName("inputFields")[0];
-jumpInput.onkeyup = function(e) {
+jumpInput.onkeyup = function (e) {
     var target = e.target;
     var maxLength = parseInt(target.attributes["maxlength"].value, 10);
     var myLength = target.value.length;
